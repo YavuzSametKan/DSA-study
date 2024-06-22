@@ -71,12 +71,16 @@ public class BinaryTree {
     }
 
     private long getHeight(Node node){
-        if (node == null) return -1;
-        return node.getHeight();
+        return node == null ? -1 : node.getHeight();
     }
 
     private void updateHeight(Node node){
-        node.setHeight(Math.max(getHeight(node.getLeft()), getHeight(node.getRight())) + 1);
+        node.setHeight(
+                Math.max(
+                        getHeight(node.getLeft()),
+                        getHeight(node.getRight())
+                ) + 1
+        );
     }
 
     //////////////////////////////// AVL Insertion //////////////////////////////
