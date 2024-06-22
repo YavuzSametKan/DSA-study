@@ -7,19 +7,17 @@ public class Node {
     private Node left;
     private Node right;
     private long piece;
-
-    //////////////////////////////////////////////////////////////////////////////
+    private long height;
 
     //////////////////////////////// Constructors ////////////////////////////////
 
     public Node(int data){
         this.data = data;
         this.piece = 1;
+        this.height = 0;
         this.left = null;
         this.right = null;
     }
-
-    //////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////// Getters Setters /////////////////////////////
 
@@ -47,17 +45,29 @@ public class Node {
         this.right = right;
     }
 
+    public long getPiece() {
+        return this.piece;
+    }
+
     public void incrementPiece(){
         this.piece++;
     }
 
     public void decrementPiece(){
-        this.piece--;
+        if (this.piece > 0) {
+            this.piece--;
+        }
     }
 
     public void resetPiece(){
         this.piece = 0;
     }
 
-    //////////////////////////////////////////////////////////////////////////////
+    public long getHeight() {
+        return this.height;
+    }
+
+    public void setHeight(long height) {
+        this.height = height;
+    }
 }
